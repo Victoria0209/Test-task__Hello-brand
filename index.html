@@ -10,6 +10,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script defer type="module" src="/js/main.js"></script>
+    <script defer type="text/javascript" src="/js/delighters.js"></script>
 
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/reset.css">
@@ -28,7 +29,7 @@
                     </div>
                 </div>
 
-                <ul class="header__list menu" id="menu">
+                <ul data-scroll="toggle(.fromTopIn, .fromTopOut) addHeight" class="header__list menu" id="menu">
                     <li class="header__item"><img src="/img/NAAM 1.png" alt=""></li>
                     <li class="header__item"><a href="">À la carte</a></li>
                     <li class="header__item"><a href="">Wijnkaart</a></li>
@@ -54,7 +55,7 @@
             </nav>
             <div class="popup" id="popup"></div>
 
-            <div class="about-reserve">
+            <div data-scroll="toggle(.fromBottomIn, .fromBottomOut) addHeight" class="about-reserve">
                 <p class="about-reserve__opening-hours">OPEN EVERYDAY 6AM - 9PM</p>
                 <p class="about-reserve__text">A bad day with lunch is better than a good day without it.</p>
 
@@ -75,7 +76,7 @@
     </header>
     <main>
         <section class="schedule wrap">
-            <div class="schedule__menu">
+            <div data-scroll="toggle(.fromRightIn, .fromRightOut) addHeight" class="schedule__menu">
                 <div class="schedule__menu-list">
                     <div class="schedule__menu-item-day">Woensdag 12/01</div>
 
@@ -161,14 +162,9 @@
                         <span class="schedule__menu-item-food">Steak Tartaar</span>
                     </div>
                 </div>
-
-
-
-
-
             </div>
 
-            <div class="schedule__photo">
+            <div data-scroll="toggle(.fromLeftIn, .fromLeftOut) addHeight" class="schedule__photo">
                 <div class="schedule__photo-wrap photo-wrap-one">
                     <img class="schedule__photo-one" src="/img/Rectangle-77.png" alt="">
                 </div>
@@ -181,7 +177,7 @@
 
         <section class="reviews">
 
-            <div class="reviews__swiper wrap swiper">
+            <div data-scroll="toggle(.scaleDownIn, .scaleDownOut) addHeight"  class="reviews__swiper wrap swiper">
                 <!-- Additional required wrapper -->
                 <div class="reviews__swiper-wrap  swiper-wrapper">
                     <!-- Slides -->

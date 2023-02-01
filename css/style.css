@@ -91,20 +91,21 @@ a:hover {
   padding: 38px;
   background: #3A4574;
   font-size: 18px;
+  position: relative;
 }
 
 .header .about-reserve__btn-reserve::before {
   font-family: FontAwesome;
   content: "\f07a";
   position: absolute;
-  top: 624px;
-  left: -16px;
+  top: 37px;
+  left: -300px;
   -webkit-transition: all 200ms ease;
   transition: all 200ms ease;
 }
 
 .header .about-reserve__btn-reserve:hover:before {
-  left: 112px;
+  left: 11px;
 }
 
 .header .about-reserve__btn-sites .site {

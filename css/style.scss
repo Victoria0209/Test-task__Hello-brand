@@ -18,6 +18,10 @@ a {
     color: #FFFFFF;
 }
 
+a:hover {
+    color: blueviolet;
+}
+
 .background {
     display: none;
 }
@@ -27,27 +31,20 @@ a {
     height: 901px;
     color: #FFFFFF;
 
-    .head {
+    &__nav {
         padding-top: 71px;
+    }
+
+    &__list {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 
-
-        &__list {
-            display: flex;
-            width: 454px;
-            justify-content: space-between;
-            font-size: 16px;
-        }
-
-        &__tel {
-            display: flex;
-            align-items: center;
-            width: 150px;
-            justify-content: space-between;
-        }
+    &__tel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .about-reserve {
@@ -68,6 +65,7 @@ a {
             display: flex;
             margin-top: 63px;
             justify-content: space-between;
+            align-items: center;
         }
 
         &__btn-reserve {
@@ -76,12 +74,29 @@ a {
             font-size: 18px;
         }
 
+        &__btn-reserve::before {
+            font-family: FontAwesome;
+            content: "\f07a";
+            position: absolute;
+            top: 624px;
+            left: -16px;
+            transition: all 200ms ease;
+        }
+
+        &__btn-reserve:hover:before {
+            left: 112px;
+        }
+
         &__btn-sites {
             .site {
                 border: 1px solid #fff;
                 border-radius: 50%;
                 padding: 10px;
                 margin-left: 25px;
+            }
+
+            .site:hover {
+                border: 1px solid blueviolet;
             }
         }
     }
@@ -279,9 +294,7 @@ a {
     .schedule__menu {
         min-width: 289px;
     }
-}
 
-@media screen and (max-width: 990px) {
     .schedule .photo-wrap-one {
         max-width: 177px;
         right: 191px;
@@ -298,12 +311,28 @@ a {
         max-width: 177px;
     }
 
+    .reviews__swiper-head {
+        max-width: 580px;
+    }
+
+    .reviews__swiper-ph {
+        max-width: 522px;
+    }
+
+    .header__list {
+        flex-wrap: wrap;
+    }
+
+    .header__item {
+        margin-right: 15px;
+    }
+
 }
 
 @media screen and (max-width: 840px) {
     .background {
         display: block;
-        width: 731px;
+        max-width: 731px;
     }
 
     .background img {
@@ -311,22 +340,36 @@ a {
     }
 
     .header {
-        display: block;
+        // display: block;
         background-image: none;
     }
 
-    .header .head {
+    .header__item {
         color: #000000;
     }
 
-    .head img {
+    .header__item img {
         background-color: #000000;
         width: 165px;
     }
 
     .header .about-reserve {
-        margin-top: 0;
+        margin-top: 50px;
         color: black;
+    }
+
+    .header .about-reserve__btn {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .header .about-reserve__btn-sites .site {
+        border: 1px solid #000000;
+        color: #000000;
+    }
+
+    .header .about-reserve__text {
+        font-size: 40px;
     }
 
 }
@@ -340,7 +383,6 @@ a {
 
     .schedule__menu {
         width: 100%;
-        // padding: 0 133px;
     }
 
     .schedule__photo {
@@ -361,8 +403,128 @@ a {
         right: 130px;
     }
 
+    .reviews__swiper-head {
+        max-width: 285px;
+    }
+
+    .reviews__swiper-head {
+        font-size: 20px;
+    }
+
+    .reviews__swiper-ph {
+        max-width: 306px;
+        font-size: 11px;
+    }
+
+    .reviews__swiper-name {
+        font-size: 14px;
+    }
+
 
 }
+
+.hamb {
+    display: none;
+}
+
+.popup {
+    display: none;
+}
+
+@media screen and (max-width: 670px) {
+    .header__nav .menu {
+        display: none;
+    }
+
+    .hamb {
+        display: flex;
+        align-items: center;
+    }
+
+    .hamb__field {
+        padding: 10px 20px;
+        cursor: pointer;
+        z-index: 100000;
+    }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin: 6px auto;
+        background-color: #000000;
+        transition: 0.2s;
+    }
+
+    .popup {
+        position: fixed;
+        top: 75px;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 100;
+        display: flex;
+        transition: 0.3s;
+    }
+
+    .popup.open {
+        left: 0;
+    }
+
+    .popup .menu {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding: 50px 50px;
+        overflow: auto;
+    }
+
+    .popup .menu>li {
+        width: 100%;
+        cursor: pointer;
+        margin-top: 35px;
+    }
+
+    .popup .menu>li>.header__tel {
+        justify-content: flex-start;
+    }
+
+    .popup .menu>li>a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #3f3f3f;
+    }
+
+    .popup .menu>li>a:hover {
+        background-color: rgba(122, 82, 179, 0.1);
+    }
+
+    .hamb__field.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamb__field.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamb__field.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    body.noscroll {
+        overflow: hidden;
+    }
+
+}
+
 
 @media screen and (max-width: 630px) {
     .schedule__photo {
@@ -385,6 +547,37 @@ a {
     .schedule .photo-wrap-three {
         position: static;
         max-width: 230px;
+    }
+
+    .header .about-reserve__btn-sites .site {
+        border-radius: 50%;
+        padding: 6px;
+        margin-left: 1px;
+    }
+
+    .header .about-reserve__btn {
+        gap: 28px;
+    }
+
+}
+
+@media screen and (max-width: 505px) {
+    .header .about-reserve__btn {
+        flex-direction: column;
+    }
+
+    .header {
+        height: 1021px;
+    }
+
+    .reviews__swiper-ph {
+        max-width: 221px;
+
+    }
+
+    .reviews__swiper-name {
+        font-size: 11px;
+        letter-spacing: 4px;
     }
 
 }

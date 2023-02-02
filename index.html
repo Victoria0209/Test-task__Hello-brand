@@ -9,7 +9,7 @@
 
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script defer type="module" src="/js/main.js"></script>
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/reset.css">
@@ -79,7 +79,15 @@
                     <input class="b-popup__name" type="text" name="name" id="inputName" placeholder="Name">
                     <input class="b-popup__email" type="text" name="email" id="inputEmail" placeholder="Email">
                     <button class="b-popup__btn">Reserve a table</button>
+                    <button class="b-popup__btn-close">Close</button>
                 </form>
+            </div>
+        </div>
+
+        <div class="error-popup">
+            <div class="error-popup__content">
+                <p>Забронировать стол не удалось</p>
+                <button class="error-popup__btn">Ok</button>
             </div>
         </div>
     </header>
